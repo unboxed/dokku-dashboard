@@ -3,7 +3,7 @@ module Routing
     def self.registered app
 
       home_page = -> do
-        @apps = [{name: "NICE APP IS NICE"}]
+        @apps = `dokku apps`.split(/\s+/)
         erb :"home", format: :html5
       end
 

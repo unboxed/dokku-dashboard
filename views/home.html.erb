@@ -1,1 +1,58 @@
-HELLO WORLD
+<!DOCTYPE html>
+<html>
+<head>
+  <title>dokku-dashboard</title>
+  <style type="text/css">
+    body {
+      font-family: "Lucida Sans Unicode", "Lucida Grande", sans-serif;
+    }
+
+    h1 {
+      text-align: center;
+    }
+
+    pre {
+      padding-left: 20px;
+    }
+
+    .container {
+      max-width: 760px;
+      margin: 0 auto;
+    }
+
+    .well {
+      background: #eee;
+      border-radius: 5px;
+      padding: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>dokku-dashboard</h1>
+    <p>
+      Welcome to the Unboxed dokku-dashboard! To deploy and app get your ssh keys on <a href="http://dokku.unbxdstage.com">dokku.unbxdstage.com</a> and then run:
+      <pre>git remote add dokku dokku@dokku.ubxdstage.com:your-app</pre>
+      <pre>git push origin dokku</pre>
+    </p>
+
+    <p>
+      Your app will then be running at:
+      <pre><a href="http://your-app.dokku.ubxdstage.com">http://your-app.dokku.ubxdstage.com</a></pre>
+    </p>
+
+    <p>
+      Dokku clients currently under investigation, full heroku experience is coming soon!
+    </p>
+
+    <h2>Currently Running Applications:</h2>
+    <div class="well">
+      <ul>
+        <% @apps.each do |app| %>
+          <li><a href="<%= "http://#{app}.dokku.ubxdstage.com" %>"><%= "http://#{app}.dokku.ubxdstage.com" %></a></li>
+        <% end %>
+      </ul>
+    </div>
+  </div>
+</body>
+</html>
