@@ -31,14 +31,14 @@
   <div class="container">
     <h1>dokku-dashboard</h1>
     <p>
-      Welcome to the Unboxed dokku-dashboard! To deploy and app get your ssh keys on <a href="http://dokku.unboxed.co">dokku.unboxed.co</a> and then run:
-      <pre>git remote add dokku dokku@dokku.unboxed.co:your-app</pre>
+      Welcome to the Unboxed dokku-dashboard! To deploy and app get your ssh keys on <a href="http://dokku.ubxdstage.com">dokku.ubxdstage.com</a> and then run:
+      <pre>git remote add dokku dokku@dokku.ubxdstage.com:your-app</pre>
       <pre>git push origin dokku</pre>
     </p>
 
     <p>
       Your app will then be running at:
-      <pre><a href="http://your-app.dokku.unboxed.co">http://your-app.dokku.unboxed.co</a></pre>
+      <pre><a href="http://your-app.dokku.ubxdstage.com">http://your-app.dokku.ubxdstage.com</a></pre>
     </p>
 
     <p>
@@ -49,7 +49,7 @@
     <div class="well">
       <ul>
         <% @apps.each do |app| %>
-          <li><a href="<%= "http://#{app}.dokku.unboxed.co" %>"><%= "http://#{app}.dokku.unboxed.co" %></a></li>
+          <li><a href="<%= "http://#{app}.dokku.ubxdstage.com" %>"><%= "http://#{app}.dokku.ubxdstage.com" %></a></li>
         <% end %>
       </ul>
     </div>
