@@ -30,11 +30,17 @@
 <body>
   <div class="container">
     <h1>dokku-dashboard</h1>
-    <p>
-      Welcome to the Unboxed dokku-dashboard! To deploy and app get your ssh keys on <a href="http://dokku.ubxdstage.com">dokku.ubxdstage.com</a> and then run:
-      <pre>git remote add dokku dokku@dokku.ubxdstage.com:your-app</pre>
-      <pre>git push dokku master</pre>
-    </p>
+    <h2>Welcome to the Unboxed dokku-dashboard!</h2>
+
+    <ol>
+      <li>Get your key in the list of authorised keys for the deploy user.</li>
+      <li>Add your key to dokku:</li>
+		<pre>cat ~/.ssh/id_rsa.pub | ssh deploy@dokku.ubxdstage.com "sudo sshcommand acl-add dokku FIRSTNAME.LASTNAME"</pre>
+      <li>Add the dokku remote:</li>
+		<pre>git remote add dokku dokku@dokku.ubxdstage.com:your-app</pre>
+      <li>Push to trigger the deploy:</li>
+		<pre>git push dokku master</pre>
+    </ol>
 
     <p>
       Your app will then be running at:
